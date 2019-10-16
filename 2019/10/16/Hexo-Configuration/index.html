@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Hu Zhenghui&#39;s Blog">
 <meta property="og:description" content="Hexo ConfigurationSite12345678# Sitetitle: Hu Zhenghui&apos;s Blogsubtitle: Blog Subtitledescription: Blog Descriptionkeywords: Hexoauthor: hu@daonao.comlanguage: zh-cntimezone: Asia/Shanghai  URL123456# U">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-10-16T06:52:42.068Z">
+<meta property="og:updated_time" content="2019-10-16T07:42:27.321Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo-Configuration">
 <meta name="twitter:description" content="Hexo ConfigurationSite12345678# Sitetitle: Hu Zhenghui&apos;s Blogsubtitle: Blog Subtitledescription: Blog Descriptionkeywords: Hexoauthor: hu@daonao.comlanguage: zh-cntimezone: Asia/Shanghai  URL123456# U">
@@ -72,7 +72,7 @@
         <section id="main"><article id="post-Hexo-Configuration" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/16/Hexo-Configuration/" class="article-date">
-  <time datetime="2019-10-16T05:48:06.000Z" itemprop="datePublished">2019-10-16</time>
+  <time datetime="2019-10-16T07:42:25.000Z" itemprop="datePublished">2019-10-16</time>
 </a>
     
   </div>
@@ -97,7 +97,8 @@
 
 <h2 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line"><span class="attr">source_dir:</span> <span class="string">source</span></span><br><span class="line"><span class="attr">public_dir:</span> <span class="string">public</span></span><br><span class="line"><span class="attr">tag_dir:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">archive_dir:</span> <span class="string">archives</span></span><br><span class="line"><span class="attr">category_dir:</span> <span class="string">categories</span></span><br><span class="line"><span class="attr">code_dir:</span> <span class="string">downloads/code</span></span><br><span class="line"><span class="attr">i18n_dir:</span> <span class="string">:lang</span></span><br><span class="line"><span class="attr">skip_render:</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  tab_replace:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h2><p><code>auto_detect</code>需要设置为<code>false</code>，如果设置为<code>true</code>，可能遇到<code>TypeError: Cannot set property &#39;lastIndex&#39; of undefined</code>报错</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line"><span class="attr">new_post_name:</span> <span class="string">:title.md</span> <span class="comment"># File name of new posts</span></span><br><span class="line"><span class="attr">default_layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">titlecase:</span> <span class="literal">false</span> <span class="comment"># Transform title into titlecase</span></span><br><span class="line"><span class="attr">external_link:</span> <span class="literal">true</span> <span class="comment"># Open external links in new tab</span></span><br><span class="line"><span class="attr">filename_case:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">render_drafts:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">relative_link:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">future:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Home-page-setting"><a href="#Home-page-setting" class="headerlink" title="Home page setting"></a>Home page setting</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Home page setting</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)</span></span><br><span class="line"><span class="attr">index_generator:</span></span><br><span class="line"><span class="attr">  path:</span> <span class="string">''</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">10</span></span><br><span class="line"><span class="attr">  order_by:</span> <span class="bullet">-date</span></span><br></pre></td></tr></table></figure>
 
@@ -124,19 +125,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/10/16/Hexo-Commands/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexo Commands
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/16/Hexo-Init/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/10/16/Hexo-Commands/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hexo Init</div>
+      <div class="article-nav-title">Hexo Commands</div>
     </a>
   
 </nav>
@@ -173,11 +165,11 @@
       <ul>
         
           <li>
-            <a href="/2019/10/16/Hexo-Commands/">Hexo Commands</a>
+            <a href="/2019/10/16/Hexo-Configuration/">Hexo-Configuration</a>
           </li>
         
           <li>
-            <a href="/2019/10/16/Hexo-Configuration/">Hexo-Configuration</a>
+            <a href="/2019/10/16/Hexo-Commands/">Hexo Commands</a>
           </li>
         
           <li>
