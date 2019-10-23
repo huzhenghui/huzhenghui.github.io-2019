@@ -70,6 +70,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ElasticSearch-Docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/23/ElasticSearch-Docker/" class="article-date">
+  <time datetime="2019-10-23T08:22:31.000Z" itemprop="datePublished">2019-10-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ElasticSearch/">ElasticSearch</a>►<a class="article-category-link" href="/categories/ElasticSearch/Install/">Install</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/23/ElasticSearch-Docker/">ElasticSearch Docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="ElasticSearch-Docker"><a href="#ElasticSearch-Docker" class="headerlink" title="ElasticSearch Docker"></a>ElasticSearch Docker</h1><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://hub.docker.com/_/elasticsearch" target="_blank" rel="noopener">https://hub.docker.com/_/elasticsearch</a></p>
+<h2 id="Docker-Pull"><a href="#Docker-Pull" class="headerlink" title="Docker Pull"></a>Docker Pull</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull elasticsearch:7.4.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-Network"><a href="#Docker-Network" class="headerlink" title="Docker Network"></a>Docker Network</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create elasticsearch-network</span><br></pre></td></tr></table></figure>
+
+<h2 id="Docker-Run"><a href="#Docker-Run" class="headerlink" title="Docker Run"></a>Docker Run</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name elasticsearch --net elasticsearch-network -p 9200:9200 -p 9300:9300 -e <span class="string">"discovery.type=single-node"</span> elasticsearch:7.4.0</span><br></pre></td></tr></table></figure>
+
+<h2 id="Test-ElasticSearch"><a href="#Test-ElasticSearch" class="headerlink" title="Test ElasticSearch"></a>Test ElasticSearch</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X GET 127.0.0.1:9200 | pbcopy</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span> : <span class="string">"da513fa5d3cb"</span>,</span><br><span class="line">  <span class="attr">"cluster_name"</span> : <span class="string">"docker-cluster"</span>,</span><br><span class="line">  <span class="attr">"cluster_uuid"</span> : <span class="string">"Mad8RO6BQmm7bmlbF-jtxQ"</span>,</span><br><span class="line">  <span class="attr">"version"</span> : &#123;</span><br><span class="line">    <span class="attr">"number"</span> : <span class="string">"7.4.0"</span>,</span><br><span class="line">    <span class="attr">"build_flavor"</span> : <span class="string">"default"</span>,</span><br><span class="line">    <span class="attr">"build_type"</span> : <span class="string">"docker"</span>,</span><br><span class="line">    <span class="attr">"build_hash"</span> : <span class="string">"22e1767283e61a198cb4db791ea66e3f11ab9910"</span>,</span><br><span class="line">    <span class="attr">"build_date"</span> : <span class="string">"2019-09-27T08:36:48.569419Z"</span>,</span><br><span class="line">    <span class="attr">"build_snapshot"</span> : <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"lucene_version"</span> : <span class="string">"8.2.0"</span>,</span><br><span class="line">    <span class="attr">"minimum_wire_compatibility_version"</span> : <span class="string">"6.8.0"</span>,</span><br><span class="line">    <span class="attr">"minimum_index_compatibility_version"</span> : <span class="string">"6.0.0-beta1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"tagline"</span> : <span class="string">"You Know, for Search"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://huzhenghui.github.io/2019/10/23/ElasticSearch-Docker/" data-id="ck230qde40000wolxdx8pfqra" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ElasticSearch/">ElasticSearch</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/10/18/hello-world/" class="article-date">
@@ -113,7 +164,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/18/hello-world/" data-id="ck1vvv7rn000lwqore2equg0s" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/18/hello-world/" data-id="ck230qdey000pwolxxk5nsmrl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -159,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/17/Hexo-Generate/" data-id="ck1vvv7r90009wqorx1r1cn2c" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/17/Hexo-Generate/" data-id="ck230qdej000bwolxuz83u9go" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -209,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/17/Hexo-Server/" data-id="ck1vvv7re000fwqorkgy7o80l" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/17/Hexo-Server/" data-id="ck230qder000jwolxi4bc5sdk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -374,7 +425,7 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Tag-Plugins/" data-id="ck1vvv7si0025wqoraad55ief" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Tag-Plugins/" data-id="ck230qdfx002dwolx2z7ttuql" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -418,7 +469,7 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Front-Matter/" data-id="ck1vvv7r70006wqors95c7eyf" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Front-Matter/" data-id="ck230qdei000awolxkf0u12ce" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Front-matter/">Front matter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -481,7 +532,7 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Configuration/" data-id="ck1vvv7r30003wqorr3weknd6" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Configuration/" data-id="ck230qdef0005wolxvgdo8tve" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/huzhenghui-github-io/">huzhenghui.github.io</a></li></ul>
@@ -593,7 +644,7 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Commands/" data-id="ck1vvv7qz0001wqorfrmx2buh" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Commands/" data-id="ck230qded0003wolxj5dhqi8r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
@@ -647,7 +698,7 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Init/" data-id="ck1vvv7ra000awqordp58hrib" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Init/" data-id="ck230qdel000ewolxdg9obkd5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/huzhenghui-github-io/">huzhenghui.github.io</a></li></ul>
@@ -721,62 +772,10 @@ Title: {{ title }}
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Setup/" data-id="ck1vvv7rk000jwqor4ydjfw2u" class="article-share-link">Share</a>
+      <a data-url="https://huzhenghui.github.io/2019/10/16/Hexo-Setup/" data-id="ck230qdev000lwolx6jztdk5d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Git-Clone" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/10/15/Git-Clone/" class="article-date">
-  <time datetime="2019-10-15T15:09:09.000Z" itemprop="datePublished">2019-10-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/huzhenghui-github-io/">huzhenghui.github.io</a>►<a class="article-category-link" href="/categories/huzhenghui-github-io/operation/">operation</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/15/Git-Clone/">Git Clone</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Git-Clone"><a href="#Git-Clone" class="headerlink" title="Git Clone"></a>Git Clone</h1><h2 id="进入项目父目录"><a href="#进入项目父目录" class="headerlink" title="进入项目父目录"></a>进入项目父目录</h2><figure class="highlight bash"><figcaption><span>进入项目父目录</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/OneDrive/huzhenghui.github.io</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取项目"><a href="#获取项目" class="headerlink" title="获取项目"></a>获取项目</h2><figure class="highlight bash"><figcaption><span>获取项目</span><a href="http://github.com/huzhenghui/huzhenghui.github.io-Hexo" target="_blank" rel="noopener">huzhenghui.github.io-Hexo</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@github.com:huzhenghui/huzhenghui.github.io-Hexo.git</span><br></pre></td></tr></table></figure>
-
-<h2 id="进入项目文件夹"><a href="#进入项目文件夹" class="headerlink" title="进入项目文件夹"></a>进入项目文件夹</h2><figure class="highlight bash"><figcaption><span>进入项目文件夹</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> huzhenghui.github.io-Hexo</span><br></pre></td></tr></table></figure>
-
-<h2 id="安装依赖包"><a href="#安装依赖包" class="headerlink" title="安装依赖包"></a>安装依赖包</h2><figure class="highlight bash"><figcaption><span>安装依赖包</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<h2 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h2><figure class="highlight bash"><figcaption><span>本地测试</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server --open --debug</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://huzhenghui.github.io/2019/10/15/Git-Clone/" data-id="ck1vvv7qs0000wqorj2h8t00z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/huzhenghui-github-io/">huzhenghui.github.io</a></li></ul>
 
     </footer>
   </div>
@@ -800,7 +799,7 @@ Title: {{ title }}
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/Learn/">Learn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/huzhenghui-github-io/">huzhenghui.github.io</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/huzhenghui-github-io/operation/">operation</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/ElasticSearch/">ElasticSearch</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ElasticSearch/Install/">Install</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/Learn/">Learn</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/huzhenghui-github-io/">huzhenghui.github.io</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/huzhenghui-github-io/operation/">operation</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -810,7 +809,7 @@ Title: {{ title }}
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-matter/">Front matter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/huzhenghui-github-io/">huzhenghui.github.io</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ElasticSearch/">ElasticSearch</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Front-matter/">Front matter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/huzhenghui-github-io/">huzhenghui.github.io</a></li></ul>
     </div>
   </div>
 
@@ -820,7 +819,7 @@ Title: {{ title }}
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Front-matter/" style="font-size: 10px;">Front matter</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/huzhenghui-github-io/" style="font-size: 13.33px;">huzhenghui.github.io</a>
+      <a href="/tags/ElasticSearch/" style="font-size: 10px;">ElasticSearch</a> <a href="/tags/Front-matter/" style="font-size: 10px;">Front matter</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/huzhenghui-github-io/" style="font-size: 13.33px;">huzhenghui.github.io</a>
     </div>
   </div>
 
@@ -842,6 +841,10 @@ Title: {{ title }}
       <ul>
         
           <li>
+            <a href="/2019/10/23/ElasticSearch-Docker/">ElasticSearch Docker</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/18/hello-world/">Hello World</a>
           </li>
         
@@ -855,10 +858,6 @@ Title: {{ title }}
         
           <li>
             <a href="/2019/10/16/Hexo-Tag-Plugins/">Hexo Tag Plugins</a>
-          </li>
-        
-          <li>
-            <a href="/2019/10/16/Hexo-Front-Matter/">Hexo Front Matter</a>
           </li>
         
       </ul>
